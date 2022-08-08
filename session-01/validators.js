@@ -6,9 +6,58 @@
   - username may contain numbers and letters
   - username cannot contain special characters
 */
-function validUsername(username) {
-  return;
+
+
+
+function checkLength(usnm){
+  if(usnm.length >= 3 && usnm.length <= 11){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
+
+function checkFirstChar(usnm){
+  for(let i = 0; i < 10 ; i++){
+  if(usnm[0] === `${i}`){
+    return false;}
+
+  else{continue;}
+  
+}
+return true; 
+}
+
+function checkType(usnm){
+  for (let i = 0; i < usnm.length; i++){
+    if (usnm[i] === typeof('!')){
+      return false;
+    }
+    else{
+      continue;
+    }
+  return true;
+  }
+}
+
+function validUsername(username) {
+  if ( checkLength(username) && checkFirstChar(username) && checkType(username)){
+  return true;
+  }
+  else{
+    return false;
+  }
+}
+
+
+
+let test = 'Mrwhiskerz'
+
+console.log(checkLength(test));
+
+
+
 
 /*
   Write a function that returns true or false if the given password
